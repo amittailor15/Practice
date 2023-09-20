@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+    <bean class="org.coforge.bean.product">
+    	<property name="prdid" value="1" />
+    	<property name="prdname" value="apple" />
+    	<property name="prcost" value="2000" />
+    	
+    	<property name="prlist">
+	    	<list>
+	    		<value>book</value>
+	    		<value>sweets</value>
+	    	</list>
+    	</property>
+    	<property name="bikeset">
+	    	<set>
+	    		<value>book</value>
+	    		<value>book</value>
+	    	</set>
+    	</property>
+    	<property name="carmap">
+	    	<map>
+	    		<entry key="delhi" value="honda city"></entry>
+	    	</map>
+    	</property>
+    </bean>
+    
+</beans>

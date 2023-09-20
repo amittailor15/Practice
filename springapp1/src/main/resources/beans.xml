@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+    <!-- bean definitions here -->
+
+<!-- <bean id="hello" class="org.coforge.bean.helloimpl"> -->
+
+<!-- <bean id="emp1" class="org.coforge.bean.employee" scope="prototype" autowire="byName">  -->
+<!-- <bean id="emp1" class="org.coforge.bean.employee" scope="prototype" autowire="byType">
+	<property name="empid" value="1" />
+	<property name="empname" value="navneet" />
+	<property name="salary" value="20000" />
+	 <property name="address" ref="address1" />
+</bean> -->
+
+<!--  <bean id="address" class="org.coforge.bean.Address" scope="prototype">  -->
+<bean id="address1" class="org.coforge.bean.Address" scope="prototype">
+	<property name="addressid" value="1" />
+	<property name="addresscity" value="jaipur" />
+	<property name="addresslocation" value="jaipur" />
+</bean>
+
+<bean id="emp1" class="org.coforge.bean.employee" init-method="init" destroy-method="destroy" lazy-init="true">
+	<constructor-arg name="empid" value="1" />
+	<constructor-arg name="empname" value="navneet" />
+	<constructor-arg name="salary" value="20000" />
+	<constructor-arg name="address" ref="address1" />
+</bean>
+
+</beans>
